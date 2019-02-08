@@ -1,24 +1,10 @@
-# README
+# Scratch
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project Authors: Donovan Mosley and Tommy Caruso
 
-Things you may want to cover:
+This project is our attempt at building a recipe manager that will help us around the house, as well as
+help hone our Ruby skills.
 
-* Ruby version
+ - Ruby: 2.5.1
+ - Rails: 5.2.2
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
