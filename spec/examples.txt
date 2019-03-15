@@ -1,4 +1,0 @@
-example_id                                   | status  | run_time        |
--------------------------------------------- | ------- | --------------- |
-./spec/helpers/recipes_helper_spec.rb[1:1]   | pending | 0.00002 seconds |
-./spec/system/recipe_management_spec.rb[1:1] | failed  | 0.17875 seconds |
