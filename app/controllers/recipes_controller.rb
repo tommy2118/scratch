@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      flash[:notice] = "Recipe successfully created."
+      flash[:success] = "Recipe successfully created."
       redirect_to recipes_path
     else
       flash[:error] = "Recipe not saved."
@@ -22,6 +22,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :prep_time, :cooking_methods, :classification, :cooking_methods, :protein_type)
+    params.require(:recipe).permit(:title, :prep_time, :cook_time, :classification, :cooking_method, :protein_type)
   end
 end

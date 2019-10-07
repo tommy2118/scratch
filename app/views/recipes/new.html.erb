@@ -1,17 +1,67 @@
-<h1>New Recipe</h1>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">New Recipe</h1>
+        <div class="card-text">
 
-<%= form_with model: @recipe do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :prep_time %>
-  <%= f.text_field :prep_time %>
-  <%= f.label :cook_time %>
-  <%= f.text_field :cook_time %>
-  <%= f.label :classification %>
-  <%= f.select :classification, options_for_select(Recipe.classifications.keys.map { |c| [c.to_s.titleize.humanize, c] }) %>
-  <%= f.label :cooking_method %>
-  <%= f.select :cooking_method, options_for_select(Recipe.cooking_methods.keys.map { |c| [c.to_s.titleize.humanize, c] }) %>
-  <%= f.label :protein_type %>
-  <%= f.select :protein_type, options_for_select(Recipe.protein_types.keys.map { |c| [c.to_s.titleize.humanize, c] }) %>
-  <%= f.submit "Submit" %>
-<% end %>
+          <%= form_with model: @recipe, html: { class: "form-horizontal" } do |f| %>
+            <fieldset>
+              <div class="form-group row">
+                <%= f.label :title, class: "col-form-label col-sm-2" %>
+                <div class="col-sm-10">
+                  <%= f.text_field :title, class: "form-control" %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= f.label :prep_time, class: "col-form-label col-sm-2" %>
+                <div class="col-sm-10">
+                  <%= f.text_field :prep_time, class: "form-control" %>
+                  <small class="form-text text-muted">
+                    Enter time in minutes.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= f.label :cook_time, class: "col-form-label col-sm-2" %>
+                <div class="col-sm-10">
+                  <%= f.text_field :cook_time, class: "form-control" %>
+                  <small class="form-text text-muted">
+                    Enter time in minutes.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= f.label :classification, class: "col-form-label col-sm-2" %>
+                <div class="col-sm-10">
+                  <%= f.select :classification, options_for_select(Recipe.classifications.keys.map { |c| [c.to_s.titleize.humanize, c] }), { include_blank: "Select classification" }, class: "form-control" %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= f.label :cooking_method, class: "col-form-label col-sm-2" %>
+                <div class="col-sm-10">
+                  <%= f.select :cooking_method, options_for_select(Recipe.cooking_methods.keys.map { |c| [c.to_s.titleize.humanize, c] }), { include_blank: "Select cooking method..." }, class: "form-control" %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= f.label :protein_type, class: "col-form-label col-sm-2" %>
+                <div class="col-sm-10">
+                  <%= f.select :protein_type, options_for_select(Recipe.protein_types.keys.map { |c| [c.to_s.titleize.humanize, c] }), { include_blank: "Select protein type..." }, class: "form-control" %>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <%= f.submit "Submit", class: "btn btn-primary" %>
+                </div>
+              </div>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
