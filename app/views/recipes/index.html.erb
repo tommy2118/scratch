@@ -1,18 +1,33 @@
-<h1>Recipes</h1>
-<dl>
-<% @recipes.each do |recipe| %>
-  <dt>Title</dt>
-  <dd><%= recipe.title %></dd>
-  <br/>
-  <dt>Prep Time</dt>
-  <dd><%= recipe.prep_time %></dd>
-  <br/>
-  <dt>Cooking Method</dt>
-  <dd><%= recipe.cooking_method %></dd>
-  <br/>
-  <dt>Cook Time</dt>
-  <dd><%= recipe.cook_time %></dd>
-  <p><%= recipe.times %></p>
-</dl>
-<br/>
-<% end %>
+<div class="container">
+  <div class="page-header">
+    <h1>Recipes</h1>
+    <h4><span class="label label-primary">Listing of recipies to choose from.</span></h4>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Prep Time</th>
+        <th>Cooking Time</th>
+        <th>Classification</th>
+        <th>Cooking Method</th>
+        <th>Protein Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+        <td><%= recipe.title %></td>
+        <td><%= recipe.prep_time %></td>
+        <td><%= recipe.cook_time %></td>
+        <td><%= recipe.classification %></td>
+        <td><%= recipe.cooking_method %></td>
+        <td><%= recipe.protein_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
