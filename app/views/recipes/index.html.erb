@@ -1,0 +1,18 @@
+<h1>Recipes</h1>
+<dl>
+<% @recipes.each do |recipe| %>
+  <dt>Title</dt>
+  <dd><%= recipe.title %></dd>
+  <br/>
+  <dt>Prep Time</dt>
+  <dd><%= recipe.prep_time %></dd>
+  <br/>
+  <dt>Cooking Method</dt>
+  <dd><%= recipe.cooking_method %></dd>
+  <br/>
+  <dt>Cook Time</dt>
+  <dd><%= recipe.cook_time %></dd>
+  <p><%= recipe.times %></p>
+</dl>
+<br/>
+<% end %>

@@ -1,2 +1,17 @@
 <h1>New Recipe</h1>
-<p> Hi Donovan!!! </p>
+
+<%= form_with model: @recipe do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :prep_time %>
+  <%= f.text_field :prep_time %>
+  <%= f.label :cook_time %>
+  <%= f.text_field :cook_time %>
+  <%= f.label :classification %>
+  <%= f.select :classification, options_for_select(Recipe.classifications.keys.map { |c| [c.to_s.titleize.humanize, c] }) %>
+  <%= f.label :cooking_method %>
+  <%= f.select :cooking_method, options_for_select(Recipe.cooking_methods.keys.map { |c| [c.to_s.titleize.humanize, c] }) %>
+  <%= f.label :protein_type %>
+  <%= f.select :protein_type, options_for_select(Recipe.protein_types.keys.map { |c| [c.to_s.titleize.humanize, c] }) %>
+  <%= f.submit "Submit" %>
+<% end %>
